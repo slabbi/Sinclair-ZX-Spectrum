@@ -1,0 +1,5 @@
+bin-fp2
+
+A small tool for assembler programmers that
+converts numbers (integer and real) into the 
+internal format that the Speccy uses.

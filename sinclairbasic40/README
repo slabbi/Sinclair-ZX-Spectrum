@@ -1,0 +1,55 @@
+Sinclair-Basic V4.0
+
+
+A basic interpreter improvment for the Spectrum 16/48.
+
+To load the program (basic40.tzx) type:
+CLEAR 58999
+LOAD "" CODE
+RANDOMIZE USR 60000
+
+After a NEW the interpreter must be started with 
+RAND USR 60000 again.
+
+The source (a-sinclairbasic40.tzx) can be loaded 
+with EDITAS48.
+
+G-TOOL.TZX is a small drawing program and
+SYSTEM.TZX displays some system variables.
+Both programs need SinclairBasic 4.0 tu run.
+
+Command list:
+
+*A x,y,r     CIRCLE       fast circle (about 50 times faster)
+*B x,y;w,h   BOX          draws a box
+*C           COPY         192 lines COPY
+*D x,y       DRAW         draws a line to x,y
+*E r,z;x,y   ELIPSE       draws an elipse at pos(x,y), radius(r) 
+                          z=10 is a circle, z<>10 an elipse
+*F x,y       FILL         fills a polygon
+*G x                      disables (x=0) or enables (x=1) error messages
+                          errors will be ignored when disabled, the program
+                          can only stopped with GOTO10000 or *G1:STOP
+*K                        calls the internal copy program
+*L x,y       HL-LOAD      Headerless-LOAD (address x, length y)
+*ML x        MOVELEFT     scrolls the screen
+*MR x        MOVERIGHT      "
+*MU x        MOVEUP         "
+*MD x        MOVEDOWN       "
+*N           NUMBER       number protection, replaces all numbers with "."
+*P x,y       DPOKE        16-Bit POKE
+*R           RESET        clears the complete memory
+*S x,y       HL-SAVE      Headerless-SAVE (address x, length y)
+*TU x,y,z    TRANSFERUP   transfers a block from x to y with length z (x++,y++,z--)
+*TD x,y,z    TRANSFERDOWN transfers a block from x to y with length z (x--,y--,z--)
+*U x         UDG bank     switches to UDG bank x (0=normal bank, 1-4)
+                          a bank will be saved with "*U2:SAVE "name" CODE USR "a",168"
+*VI x,y                   searches for INK x and replaces it with INK y
+*VP x,y                    like above but PAPER
+*VCI x                    sets forgroundcolor to x
+*VCP x                    sets backgroundcolor to x
+*VDU i,p,f,b              sets INK,PAPER,FLASH,BRIGHT (screen will not be cleared)
+*W x$        WAITKEY      waits for key x$
+*W x         WAITKEYCODE  waits for key with code x
+*X           CLS          nice CLS
+*Z                        should be used before making a hardcopy on a dot-matrix printer
